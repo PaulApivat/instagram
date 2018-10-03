@@ -8,10 +8,10 @@ const DummyData = props => {
                 <>
                     <div>
                         <>
-                            {e.username}  {/* will erase */}
+                           <h1> {e.username} </h1> {/* will pass down */}
                         </>
                         <>
-                            <PostContainer comments={e.comments}/>
+                            <PostContainer commentsarray={e.comments}/>
                         </>
                     </div>
                 </>

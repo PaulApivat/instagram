@@ -1,12 +1,18 @@
 import React from 'react';
+import CommentSection from '../CommentSection/CommentSection'
 
 const PostContainer = props => {
     return (
         <>
-            {props.comments.map(e => (
+            {props.commentsarray.map(e => (
                 <>
                     <div>
-                        {e.text}
+                        <>
+                            <strong>Text: </strong>{e.text} {/* will pass down */}
+                        </>
+                        <>
+                           <CommentSection username={e.username} text={e.text}/>
+                        </>
                     </div>
                 </>
             ))}

@@ -1,5 +1,6 @@
 import React from 'react';
 import PostContainer from './components/PostContainer/PostContainer'
+import PropTypes from 'prop-types';
 
 const DummyData = props => {
     return (
@@ -19,5 +20,20 @@ const DummyData = props => {
         </>
     )
 }
+
+DummyData.propTypes = {
+    dummyData: PropTypes.array.isRequired
+};
+
+DummyData.propTypes = {
+    dummyData: PropTypes.arrayOf(
+        PropTypes.shape({
+            username: PropTypes.string,
+            likes: PropTypes.number,
+            timestamp: PropTypes.string,
+            comments: PropTypes.array
+        })
+    ).isRequired
+};
 
 export default DummyData;

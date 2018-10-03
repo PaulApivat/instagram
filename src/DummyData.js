@@ -1,4 +1,5 @@
 import React from 'react';
+import PostContainer from './components/PostContainer/PostContainer'
 
 const DummyData = props => {
     return (
@@ -6,7 +7,12 @@ const DummyData = props => {
             {props.dummyData.map(e => (
                 <>
                     <div>
-                        {e.username}
+                        <>
+                            {e.username}  {/* will erase */}
+                        </>
+                        <>
+                            <PostContainer comments={e.comments}/>
+                        </>
                     </div>
                 </>
             ))}

@@ -4,11 +4,10 @@ import PropTypes from 'prop-types';
 const CommentSection = props => {
     return (
         <div>
-           Username: {props.username}, Second Text: {props.text},
-           <>
-             Input Box: <input placeholder="placeholder text"></input>
-           </>
+           <strong>{props.username}</strong> {props.text},
+           
         </div>
+           
     )
 }
 

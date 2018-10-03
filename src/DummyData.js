@@ -1,21 +1,25 @@
 import React from 'react';
 import PostContainer from './components/PostContainer/PostContainer'
 import PropTypes from 'prop-types';
+//import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
 
 const DummyData = props => {
     return (
         <>
             {props.dummyData.map(e => (
-                <>
+            
                     <div>
                         <>
-                           <h1> {e.username} </h1> {/* will pass down */}
+                            <img src="#" />
                         </>
                         <>
                             <PostContainer commentsarray={e.comments}/>
                         </>
+                        <>
+                            <input placeholder="Add a comment..."></input>
+                        </>
                     </div>
-                </>
+                
             ))}
         </>
     )

@@ -9,9 +9,6 @@ const PostContainer = props => {
                 <>
                     <div>
                         <>
-                            <strong>Text: </strong>{e.text} {/* will pass down */}
-                        </>
-                        <>
                            <CommentSection username={e.username} text={e.text}/>
                         </>
                     </div>

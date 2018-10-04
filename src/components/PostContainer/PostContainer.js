@@ -1,24 +1,44 @@
 import React from 'react';
 import CommentSection from '../CommentSection/CommentSection';
 import PropTypes from 'prop-types';
-// import './PostContainer.css';
+import './PostContainer.css';
+
+// const PostContainer = props => {
+//     return (
+//         <div>
+//             <>
+//                 Likes: {props.likes}
+//             </>
+//             <>
+//                 {props.commentsarray.map(comments => (
+//                     <div>
+//                         <CommentSection username={comments.username} text={comments.text}/> 
+//                     </div>
+//                 ))}
+//             </>
+//             <>
+//                 Time: {props.timestamp}
+//             </>
+//         </div>
+//     )
+// }
 
 const PostContainer = props => {
     return (
         <div>
-            <>
+            <div className="likes">
                 Likes: {props.likes}
-            </>
-            <>
+            </div>
+            <div>
                 {props.commentsarray.map(comments => (
                     <div>
                         <CommentSection username={comments.username} text={comments.text}/> 
                     </div>
                 ))}
-            </>
-            <>
+            </div>
+            <div className="timestamp">
                 Time: {props.timestamp}
-            </>
+            </div>
         </div>
     )
 }

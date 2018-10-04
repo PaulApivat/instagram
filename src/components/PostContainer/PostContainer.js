@@ -4,12 +4,13 @@ import PropTypes from 'prop-types';
 import './PostContainer.css';
 import './like.png';
 
+const likeImg = './like.png';
 
 const PostContainer = props => {
     return (
         <div>
             <div>
-                <img src={props.like} alt="like image"/>
+                <img src={likeImg} alt="like image"/>
             </div>
             <div className="likes">
                 Likes: {props.likes}

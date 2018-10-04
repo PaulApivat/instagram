@@ -4,6 +4,10 @@ import PropTypes from 'prop-types';
 
 const PostContainer = props => {
     return (
+        <div>
+        <>
+            Likes: {props.likes}
+        </>
         <>
             {props.commentsarray.map(e => (
                 <>
@@ -15,8 +19,10 @@ const PostContainer = props => {
                 </>
             ))}
         </>
+        </div>
     )
 }
+
 
 PostContainer.propTypes = {
     commentsarray: PropTypes.array.isRequired

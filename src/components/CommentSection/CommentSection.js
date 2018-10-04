@@ -1,13 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
+
+
+// const CommentSection = props => {
+//     return (
+//         <div>
+//             <strong>{props.username}</strong> {props.text},
+//         </div>
+//     )
+// }
 
 const CommentSection = props => {
     return (
-        <div>
-           <strong>{props.username}</strong> {props.text},
-           
-        </div>
-           
+       
+        <CardBody>
+            <strong>{props.username}</strong> {props.text}, 
+        </CardBody>
+        
     )
 }
 

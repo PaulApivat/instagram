@@ -2,10 +2,15 @@ import React from 'react';
 import CommentSection from '../CommentSection/CommentSection';
 import PropTypes from 'prop-types';
 import './PostContainer.css';
+import './like.png';
+
 
 const PostContainer = props => {
     return (
         <div>
+            <div>
+                <img src={props.like} alt="like image"/>
+            </div>
             <div className="likes">
                 Likes: {props.likes}
             </div>

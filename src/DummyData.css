@@ -2,6 +2,8 @@
     max-width: 600px;
     width: 100%;
     margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .thumbnail-image {
@@ -15,7 +17,7 @@
 
 
 input {
-    height: 80px;
+    height: 70px;
     padding-left: 20px;
 }
 

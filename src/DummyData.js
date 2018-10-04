@@ -1,7 +1,5 @@
 import React from 'react';
 import PostContainer from './components/PostContainer/PostContainer'
-import ImageContainer from './components/ImageContainer/ImageContainer'
-import ThumbNailImageContainer from './components/ThumbNailImageContainer/ThumbNailImageContainer'
 import PropTypes from 'prop-types';
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
 import './DummyData.css';

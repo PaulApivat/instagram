@@ -5,20 +5,23 @@ import PropTypes from 'prop-types';
 const PostContainer = props => {
     return (
         <div>
-        <>
-            Likes: {props.likes}
-        </>
-        <>
-            {props.commentsarray.map(e => (
-                <>
-                    <div>
-                        <>
-                           <CommentSection username={e.username} text={e.text}/>
-                        </>
-                    </div>
-                </>
-            ))}
-        </>
+            <>
+                Likes: {props.likes}
+            </>
+            <>
+                {props.commentsarray.map(e => (
+                    <>
+                        <div>
+                            <>
+                            <CommentSection username={e.username} text={e.text}/>
+                            </>
+                        </div>
+                    </>
+                ))}
+            </>
+            <>
+                Time: {props.timestamp}
+            </>
         </div>
     )
 }

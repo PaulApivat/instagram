@@ -10,21 +10,20 @@ import './DummyData.css';
 const DummyData = props => {
     return (
         <>
-            {props.dummyData.map(e => (
+            {props.dummyData.map(alldata => (
                     <div>
                         <Card className="main-container">
-                            <CardImg className="thumbnail-image" src={e.thumbnailUrl} alt="Thumbnail Image"/>
+                            <CardImg className="thumbnail-image" src={alldata.thumbnailUrl} alt="Thumbnail Image"/>
                             <CardImg className="image" top width="100%" 
-                                src={e.imageUrl} alt="Main Image" 
-                                //"https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" 
+                                src={alldata.imageUrl} alt="Main Image" 
                             />
                             <PostContainer 
-                                commentsarray={e.comments} 
-                                likes={e.likes} 
-                                timestamp={e.timestamp}
+                                commentsarray={alldata.comments} 
+                                likes={alldata.likes} 
+                                timestamp={alldata.timestamp}
 
                             />
-                            <input placeholder="Add a comment..."></input>
+                            <input placeholder="Add a comment..." />
                         </Card>
                     </div>
             ))}

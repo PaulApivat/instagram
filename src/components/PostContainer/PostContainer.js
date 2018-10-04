@@ -10,9 +10,9 @@ const PostContainer = props => {
                 Likes: {props.likes}
             </>
             <>
-                {props.commentsarray.map(e => (
+                {props.commentsarray.map(comments => (
                     <div>
-                        <CommentSection username={e.username} text={e.text}/> 
+                        <CommentSection username={comments.username} text={comments.text}/> 
                     </div>
                 ))}
             </>
@@ -24,9 +24,6 @@ const PostContainer = props => {
 }
 
 
-// PostContainer.propTypes = {
-//     commentsarray: PropTypes.array.isRequired
-// };
 
 PostContainer.defaultProps = {
     likes: 0,

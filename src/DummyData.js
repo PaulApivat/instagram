@@ -13,7 +13,7 @@ const DummyData = props => {
                         <Card className="main-container">
                                 <div className="header-container">
                                     <div className="thumbnail-image-container">
-                                        <CardImg className="thumbnail-image" src={alldata.thumbnailUrl} alt="Thumbnail Image" />
+                                        <img className="thumbnail-image" src={alldata.thumbnailUrl} alt="Thumbnail Image" />
                                     </div>
                                     <div className="username">
                                         {alldata.username}

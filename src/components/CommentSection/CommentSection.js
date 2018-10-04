@@ -12,12 +12,10 @@ import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } fr
 // }
 
 const CommentSection = props => {
-    return (
-       
-        <CardBody>
-            <strong>{props.username}</strong> {props.text}, 
-        </CardBody>
-        
+    return (    
+            <CardBody>
+                <CardText><strong>{props.username}</strong> {props.text}, </CardText>
+            </CardBody>
     )
 }
 

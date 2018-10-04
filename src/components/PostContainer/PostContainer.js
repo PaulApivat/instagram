@@ -10,13 +10,9 @@ const PostContainer = props => {
             </>
             <>
                 {props.commentsarray.map(e => (
-                    <>
-                        <div>
-                            <>
-                            <CommentSection username={e.username} text={e.text}/>
-                            </>
-                        </div>
-                    </>
+                    <div>
+                        <CommentSection username={e.username} text={e.text}/> 
+                    </div>
                 ))}
             </>
             <>

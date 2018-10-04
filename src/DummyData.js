@@ -9,7 +9,7 @@ const DummyData = props => {
     return (
         <>
             {props.dummyData.map(alldata => (
-                    <div>
+                    <div key={alldata.timestamp}>
                         <Card className="main-container">
                                 <div className="header-container">
                                     <div className="thumbnail-image-container">

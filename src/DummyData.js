@@ -11,7 +11,14 @@ const DummyData = props => {
             {props.dummyData.map(alldata => (
                     <div>
                         <Card className="main-container">
-                            <CardImg className="thumbnail-image" src={alldata.thumbnailUrl} alt="Thumbnail Image"/>
+                                <div className="header-container">
+                                    <div className="thumbnail-image-container">
+                                        <CardImg className="thumbnail-image" src={alldata.thumbnailUrl} alt="Thumbnail Image" />
+                                    </div>
+                                    <div className="username">
+                                        {alldata.username}
+                                    </div>
+                                </div>
                             <CardImg className="image" top width="100%" 
                                 src={alldata.imageUrl} alt="Main Image" 
                             />
@@ -29,9 +36,6 @@ const DummyData = props => {
     )
 }
 
-// DummyData.propTypes = {
-//     dummyData: PropTypes.array.isRequired
-// };
 
 DummyData.defaultProps = {
     dummyData: []

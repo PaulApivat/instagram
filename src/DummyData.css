@@ -6,10 +6,31 @@
     margin-bottom: 50px;
 }
 
-.thumbnail-image {
-    border: 1px solid orange;
+
+.header-container {
+    border: 5px solid orange;
     height: 80px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
+
+.username {
+    color: red;
+    border: 1px solid blue;
+    height: 30px;
+}
+
+.thumbnail-image {
+    height: 60px;
+    width: 20%;
+    border: 3px solid purple;
+    border-radius: 50px;
+    padding-left: 30px;
+}
+
+
 .image {
     border: 1px solid green;
     height: 550px;

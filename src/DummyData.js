@@ -13,9 +13,9 @@ const DummyData = props => {
             {props.dummyData.map(e => (
                     <div>
                         <Card className="main-container">
-                            <CardImg className="thumbnail-image" src={<ThumbNailImageContainer thumbnail={e.thumbnailUrl}/>} alt="Thumbnail Image"/>
+                            <CardImg className="thumbnail-image" src={e.thumbnailUrl} alt="Thumbnail Image"/>
                             <CardImg className="image" top width="100%" 
-                                src={<ImageContainer image={e.imageUrl} />} alt="Main Image" 
+                                src={e.imageUrl} alt="Main Image" 
                                 //"https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" 
                             />
                             <PostContainer 
@@ -32,9 +32,13 @@ const DummyData = props => {
     )
 }
 
-DummyData.propTypes = {
-    dummyData: PropTypes.array.isRequired
-};
+// DummyData.propTypes = {
+//     dummyData: PropTypes.array.isRequired
+// };
+
+DummyData.defaultProps = {
+    dummyData: []
+}
 
 DummyData.propTypes = {
     dummyData: PropTypes.arrayOf(

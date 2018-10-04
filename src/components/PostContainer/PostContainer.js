@@ -1,6 +1,7 @@
 import React from 'react';
 import CommentSection from '../CommentSection/CommentSection';
 import PropTypes from 'prop-types';
+// import './PostContainer.css';
 
 const PostContainer = props => {
     return (
@@ -23,9 +24,16 @@ const PostContainer = props => {
 }
 
 
-PostContainer.propTypes = {
-    commentsarray: PropTypes.array.isRequired
-};
+// PostContainer.propTypes = {
+//     commentsarray: PropTypes.array.isRequired
+// };
+
+PostContainer.defaultProps = {
+    likes: 0,
+    username: '',
+    text: '',
+    timestamp: Date.now()
+}
 
 PostContainer.propTypes = {
     commentsarray: PropTypes.arrayOf(

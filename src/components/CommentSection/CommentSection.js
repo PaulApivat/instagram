@@ -39,6 +39,10 @@ class CommentSection extends React.Component {
         console.log('mounting CommentSection data...')
     }
 
+    addNewComment = (event,index) => {
+        this.setState({text: event.target.value});
+    }
+
     render(){
         return(
             <CardBody>
@@ -47,6 +51,8 @@ class CommentSection extends React.Component {
         )
     }
 }
+
+
 
 
 CommentSection.propTypes = {

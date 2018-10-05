@@ -33,7 +33,10 @@ const DummyData = props => {
                                     timestamp={alldata.timestamp}
 
                                 />
-                                <input placeholder="Add a comment..." />
+                                <form>
+                                    <input placeholder="Add a comment..." />
+                                </form>
+
                             </Card>
                         </div>
                 ))}

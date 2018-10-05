@@ -6,14 +6,20 @@ import './DummyData.css';
 import SearchBar from './components/SearchBar/SearchBar'
 
 
-const DummyData = props => {
-    return (
-        <div>
+class DummyData extends React.Component {
+    constructor(){
+        super();
+
+    }
+
+    render(){
+        return(
+            <div>
             <>
-                <SearchBar searchbar={props.searchbar} />
+                <SearchBar searchbar={this.props.searchbar} />
             </>
             <>
-                {props.dummyData.map(alldata => (
+                {this.props.dummyData.map(alldata => (
                         <div key={alldata.timestamp}>
                             <Card className="main-container">
                                     <div className="header-container">
@@ -42,8 +48,49 @@ const DummyData = props => {
                 ))}
             </>
         </div>
-    )
+        )
+    }
 }
+
+
+// const DummyData = props => {
+//     return (
+//         <div>
+//             <>
+//                 <SearchBar searchbar={props.searchbar} />
+//             </>
+//             <>
+//                 {props.dummyData.map(alldata => (
+//                         <div key={alldata.timestamp}>
+//                             <Card className="main-container">
+//                                     <div className="header-container">
+//                                         <div className="thumbnail-image-container">
+//                                             <img className="thumbnail-image" src={alldata.thumbnailUrl} alt="Thumbnail Image" />
+//                                         </div>
+//                                         <div className="username">
+//                                             {alldata.username}
+//                                         </div>
+//                                     </div>
+//                                 <CardImg className="image" top width="100%" 
+//                                     src={alldata.imageUrl} alt="Main Image" 
+//                                 />
+//                                 <PostContainer 
+//                                     commentsarray={alldata.comments} 
+//                                     likes={alldata.likes} 
+//                                     timestamp={alldata.timestamp}
+
+//                                 />
+//                                 <form>
+//                                     <input placeholder="Add a comment..." />
+//                                 </form>
+
+//                             </Card>
+//                         </div>
+//                 ))}
+//             </>
+//         </div>
+//     )
+// }
 
 
 DummyData.defaultProps = {

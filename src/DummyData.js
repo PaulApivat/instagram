@@ -39,7 +39,7 @@ class DummyData extends React.Component {
                                     timestamp={alldata.timestamp}
 
                                 />
-                                <form>
+                                <form onSubmit={this.props.addNewComment}>
                                     <input placeholder="Add a comment..." />
                                 </form>
 

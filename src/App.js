@@ -26,9 +26,7 @@ class App extends Component {
 
   componentDidMount(){
     console.log('mounting data...')
-    setTimeout(() => {
-      this.setState({data: dummyData});
-    }, 500);
+    this.setState({data: dummyData});
   }
 
   render(){

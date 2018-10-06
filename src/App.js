@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import dummyData from './dummy-data';
 import DummyData from './DummyData';
+import SearchBar from './components/SearchBar/SearchBar'
+
 
 // class App extends Component {
 //   render() {
@@ -25,15 +27,24 @@ class App extends Component {
   }
 
   componentDidMount(){
-    console.log('mounting data...')
     this.setState({data: dummyData});
   }
+
+  filterPost = (str) => {
+    const posts = dummyData;
+    const filteredpost = posts.filter((post) => {
+      return post.username.includes(str)
+    })
+    this.setState({data: filteredpost});
+  }
+
 
 
   render(){
     return(
       <div className="App">
-        <DummyData dummyData={this.state.data} />
+            <SearchBar filterPost={this.filterPost}/>
+            <DummyData dummyData={this.state.data} />
       </div>
     )
   }

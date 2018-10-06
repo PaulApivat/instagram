@@ -3,28 +3,6 @@ import PropTypes from 'prop-types';
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
 
 
-// const CommentSection = props => {
-//     return (  
-//             <CardBody>
-//                 <CardText><strong>{props.username}</strong> {props.text} </CardText>
-//             </CardBody>
-//     )
-// }
-
-// class CommentSection extends React.Component {
-//     constructor(){
-//         super();
-//     }
-
-//     render(){
-//         return(
-//             <CardBody>
-//                 <CardText><strong>{this.props.username}</strong> {this.props.text} </CardText>
-//             </CardBody>
-//         )
-//     }
-// }
-
 class CommentSection extends React.Component {
     constructor(props){
         super(props);
@@ -34,13 +12,18 @@ class CommentSection extends React.Component {
         };
     }
 
-    componentDidMount(){
-        this.setState({username: `{this.props.username}`, text: `{this.props.text}`})
-        console.log('mounting CommentSection data...')
+    handleChange = (event) => {
+        this.setState({text: event.target.value });
     }
 
     addNewComment = (event,index) => {
         this.setState({text: event.target.value});
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+        this.props.addNewComment({username: this.state.username, text: this.state.text});
+        this.setState({text: this.state.text, username: this.state.username});
     }
 
     render(){

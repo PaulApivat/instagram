@@ -11,16 +11,42 @@ class PostContainer extends React.Component {
         super();
         this.state = {
             counter: 0,
+            username: 'static username',
+            text: '',
+            commentsarray: [],
         }
+    }
+
+    componentDidMount(){
+        this.setState({
+            commentsarray: this.props.commentsarray,
+        })
     }
 
     handleIncrease = () => {
         this.setState(previousState => {
             return {
-                counter: previousState.counter + 1
+                counter: previousState.counter + 1,
             }
         })
     }
+
+    handleChange = (event) => {
+        this.setState({text: event.target.value });
+    }
+
+    addNewComment = () => {
+        const {commentsarray, username, text} = this.state;
+        this.setState({commentsarray: [...commentsarray, {username, text }]});
+        // this.setState({commentsarray: [...this.state.commentsarray, {username: this.state.username, text: this.state.text }]});
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+        this.addNewComment({username: this.state.username, text: this.state.text});
+        this.setState({text: this.state.text, username: this.state.username});
+    }
+
 
     render(){
         return (
@@ -34,7 +60,7 @@ class PostContainer extends React.Component {
                     Likes: {this.state.counter}
                 </div>
                 <div>
-                    {this.props.commentsarray.map(comments => (
+                    {this.state.commentsarray.map(comments => (
                         <div>
                             <CommentSection username={comments.username} text={comments.text}/> 
                         </div>
@@ -43,6 +69,10 @@ class PostContainer extends React.Component {
                 <div className="timestamp">
                     Time: {this.props.timestamp}
                 </div>
+
+                <form onSubmit={this.handleSubmit}>
+                     <input type="text" value={this.state.text} onChange={this.handleChange} placeholder="Add a comment..." />
+                </form>
             </div>
         )
     }  

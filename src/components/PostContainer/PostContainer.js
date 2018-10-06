@@ -6,29 +6,59 @@ import './like.png';
 
 const likeImg = './like.png';
 
-const PostContainer = props => {
-    return (
-        <div>
-            <div>
-                <img src={likeImg} alt="like image"/>
-            </div>
-            <div className="likes">
-                Likes: {props.likes}
-            </div>
-            <div>
-                {props.commentsarray.map(comments => (
-                    <div>
-                        <CommentSection username={comments.username} text={comments.text}/> 
-                    </div>
-                ))}
-            </div>
-            <div className="timestamp">
-                Time: {props.timestamp}
-            </div>
-        </div>
-    )
-}
+// const PostContainer = props => {
+//     return (
+//         <div>
+//             <div>
+//                 <img src={likeImg} alt="like image"/>
+//             </div>
+//             <div className="likes">
+//                 Likes: {props.likes}
+//             </div>
+//             <div>
+//                 {props.commentsarray.map(comments => (
+//                     <div>
+//                         <CommentSection username={comments.username} text={comments.text}/> 
+//                     </div>
+//                 ))}
+//             </div>
+//             <div className="timestamp">
+//                 Time: {props.timestamp}
+//             </div>
+//         </div>
+//     )
+// }
 
+class PostContainer extends React.Component {
+    constructor(){
+        super();
+        this.state = {
+            counter: 0,
+        }
+    }
+    render(){
+        return (
+            <div>
+                <div>
+                    <img src={likeImg} alt="like image"/>
+                </div>
+                <div className="likes">
+                    Likes: {this.props.likes}
+                </div>
+                <div>
+                    {this.props.commentsarray.map(comments => (
+                        <div>
+                            <CommentSection username={comments.username} text={comments.text}/> 
+                        </div>
+                    ))}
+                </div>
+                <div className="timestamp">
+                    Time: {this.props.timestamp}
+                </div>
+            </div>
+        )
+    }  
+}
 
 
 PostContainer.defaultProps = {

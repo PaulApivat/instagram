@@ -29,7 +29,7 @@ class CommentSection extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            username: 'hard coded',
+            username: 'static username',
             text: ''
         };
     }

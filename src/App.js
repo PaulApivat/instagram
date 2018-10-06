@@ -5,19 +5,6 @@ import DummyData from './DummyData';
 import SearchBar from './components/SearchBar/SearchBar'
 
 
-// class App extends Component {
-//   render() {
-//     return (
-//       <div className="App">
-//         <DummyData dummyData={dummyData} />
-//       </div>
-//     );
-//   }
-// }
-
-// In app.js use componentDidMount() to set your data to the component's state. 
-// Use the state object to pass data to your PostContainer component.
-
 class App extends Component {
   constructor() {
     super();
@@ -28,6 +15,8 @@ class App extends Component {
 
   componentDidMount(){
     this.setState({data: dummyData});
+    // This console.log shows an empty array
+    console.log(this.state.data)
   }
 
   filterPost = (str) => {
@@ -41,6 +30,8 @@ class App extends Component {
 
 
   render(){
+    // This console.log shows the FULL dummyData array
+    console.log(this.state.data)
     return(
       <div className="App">
             <SearchBar filterPost={this.filterPost}/>

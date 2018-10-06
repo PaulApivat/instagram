@@ -7,17 +7,6 @@ import './Instagram-Letter.png'
 const instaLogo = './instagram.png';
 const instaLetter = './Instagram-Letter.png';
 
-// const SearchBar = props => {
-//     return (
-//         <div className="searchbar-container">
-//             <div>
-//                 <img src={props.instaLogo} alt="insta logo"/> | <img src={props.instaLetter} alt="Instagram" />
-//             </div>
-//             <div>Search Bar</div>
-//             <div>Icons</div>
-//         </div>
-//     )
-// }
 
 class SearchBar extends React.Component {
     constructor(){
@@ -30,6 +19,7 @@ class SearchBar extends React.Component {
 
     handleChange = (event) => {
         this.setState({searchterm: event.target.value });
+        //props passed down from App.js
         this.props.filterPost(this.state.searchterm)
     }
 

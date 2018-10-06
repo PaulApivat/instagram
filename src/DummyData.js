@@ -9,14 +9,17 @@ import './DummyData.css';
 class DummyData extends React.Component {
     constructor(){
         super();
-        this.state = {
-            postarray: [],
-        };
+        // this.state = {
+        //     postarray: [],
+        // };
     }
 
     
+    
 
     render(){
+        // this DummyData component is simply taking in props from App.js and rendering, it's not changing any state
+        // console.log(this.props.dummyData)
         return(
             <div>
             <>
@@ -53,12 +56,9 @@ class DummyData extends React.Component {
 
 
 
-
-
-
-// DummyData.defaultProps = {
-//     dummyData: []
-// }
+DummyData.defaultProps = {
+    dummyData: []
+}
 
 DummyData.propTypes = {
     dummyData: PropTypes.arrayOf(

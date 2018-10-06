@@ -19,6 +19,7 @@ class PostContainer extends React.Component {
 
     componentDidMount(){
         this.setState({
+            //passing down props from DummyData.js
             commentsarray: this.props.commentsarray,
         })
     }
@@ -45,6 +46,10 @@ class PostContainer extends React.Component {
         event.preventDefault();
         this.addNewComment({username: this.state.username, text: this.state.text});
         this.setState({text: this.state.text, username: this.state.username});
+        // this console.log shows PostContainer's current state {counter: 0, username: "static username", text: "a"}
+        // and commentsarray being passed as a prop from DummyData -- pre-existing data
+        console.log(this.state)
+        console.log(this.props.commentsarray)
     }
 
 

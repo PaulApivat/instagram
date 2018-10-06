@@ -30,11 +30,8 @@ class PostContainer extends React.Component {
                     <img src={likeImg} alt="like image"/>
                 </div>
 
-                <button onClick={this.handleIncrease}> Increase New Likes </button>
-
                 <div className="likes">
-                    Likes: {this.props.likes},
-                    New Likes: {this.state.counter}
+                    Likes: {this.state.counter}
                 </div>
                 <div>
                     {this.props.commentsarray.map(comments => (

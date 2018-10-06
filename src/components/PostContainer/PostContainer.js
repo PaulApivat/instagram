@@ -6,29 +6,6 @@ import './like.png';
 
 const likeImg = './like.png';
 
-// const PostContainer = props => {
-//     return (
-//         <div>
-//             <div>
-//                 <img src={likeImg} alt="like image"/>
-//             </div>
-//             <div className="likes">
-//                 Likes: {props.likes}
-//             </div>
-//             <div>
-//                 {props.commentsarray.map(comments => (
-//                     <div>
-//                         <CommentSection username={comments.username} text={comments.text}/> 
-//                     </div>
-//                 ))}
-//             </div>
-//             <div className="timestamp">
-//                 Time: {props.timestamp}
-//             </div>
-//         </div>
-//     )
-// }
-
 class PostContainer extends React.Component {
     constructor(){
         super();
@@ -36,14 +13,28 @@ class PostContainer extends React.Component {
             counter: 0,
         }
     }
+
+    handleIncrease = () => {
+        this.setState(previousState => {
+            return {
+                counter: previousState.counter + 1
+            }
+        })
+    }
+
     render(){
         return (
             <div>
-                <div>
+
+                <div onClick={this.handleIncrease}>
                     <img src={likeImg} alt="like image"/>
                 </div>
+
+                <button onClick={this.handleIncrease}> Increase New Likes </button>
+
                 <div className="likes">
-                    Likes: {this.props.likes}
+                    Likes: {this.props.likes},
+                    New Likes: {this.state.counter}
                 </div>
                 <div>
                     {this.props.commentsarray.map(comments => (

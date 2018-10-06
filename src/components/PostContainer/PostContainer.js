@@ -50,7 +50,7 @@ class PostContainer extends React.Component {
 
 
 PostContainer.defaultProps = {
-    likes: 0,
+    counter: 0,
     username: '',
     text: '',
     timestamp: Date.now()

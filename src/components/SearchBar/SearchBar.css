@@ -7,5 +7,21 @@
 
     display: flex;
     justify-content: space-between;
+    padding-top: 20px;
 }
 
+.instalogo {
+    height: 40px;
+}
+
+.searchbar {
+    height: 40px;
+    /* border: 1px solid gray; */
+    width: 25%;
+}
+
+.searchbar input {
+    height: 40px;
+    width: 100%;
+    text-align: center;
+}

@@ -27,9 +27,11 @@ class SearchBar extends React.Component {
         return(
             <div className="searchbar-container">
                 <div>
-                    <img src={instaLogo} alt="insta logo"/> | <img src={instaLetter} alt="Instagram" />
+                    <img className="instalogo" src={instaLogo} alt="insta logo"/> | <img src={instaLetter} alt="Instagram" />
                 </div>
-                <div>Search Bar</div>
+                <div className="searchbar">
+                    <input placeholder="Search" />
+                </div>
                 <div>Icons</div>
             </div>
         )

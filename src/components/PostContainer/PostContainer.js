@@ -3,8 +3,10 @@ import CommentSection from '../CommentSection/CommentSection';
 import PropTypes from 'prop-types';
 import './PostContainer.css';
 import './like.png';
+import './conversation.png';
 
 const likeImg = './like.png';
+const conversation = './conversation.png';
 
 class PostContainer extends React.Component {
     constructor(){
@@ -57,8 +59,9 @@ class PostContainer extends React.Component {
         return (
             <div>
 
-                <div onClick={this.handleIncrease}>
+                <div className="heart-icon" onClick={this.handleIncrease}>
                     <img src={likeImg} alt="like image"/>
+                    <img className="conversation" src={conversation} alt="conversation"/>
                 </div>
 
                 <div className="likes">
@@ -76,7 +79,7 @@ class PostContainer extends React.Component {
                 </div>
 
                 <form onSubmit={this.handleSubmit}>
-                     <input type="text" value={this.state.text} onChange={this.handleChange} placeholder="Add a comment..." />
+                     <input className="inputbox" type="text" value={this.state.text} onChange={this.handleChange} placeholder="Add a comment..." />
                 </form>
             </div>
         )

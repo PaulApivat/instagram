@@ -1,12 +1,18 @@
 import React from 'react';
 import './SearchBar.css';
-import './instagram.png';
+import './instagram-logo.png';
 import './Instagram-Letter.png'
+import './like.png';
+import './compass.png';
+import './person.png';
+import './search-icon.png';
 
-
-const instaLogo = './instagram.png';
+const instaLogo = './instagram-logo.png';
 const instaLetter = './Instagram-Letter.png';
-
+const likeImg = './like.png';
+const compass = './compass.png';
+const person = './person.png';
+const searchIcon = './search-icon.png';
 
 class SearchBar extends React.Component {
     constructor(){
@@ -28,12 +34,16 @@ class SearchBar extends React.Component {
         return(
             <div className="searchbar-container">
                 <div>
-                    <img className="instalogo" src={instaLogo} alt="insta logo"/> | <img src={instaLetter} alt="Instagram" />
+                    <img className="instalogo" src={instaLogo} alt="insta logo"/> | <img className="instaletter" src={instaLetter} alt="Instagram" />
                 </div>
                 <div className="searchbar">
                     <input value={this.state.searchterm} onChange={this.handleChange} placeholder="Search" />
                 </div>
-                <div>Icons</div>
+                <div className="icon-cluster">
+                    <img className="compass" src={compass} alt="compass"/> 
+                    <img className="" src={likeImg} alt="heart"/> 
+                    <img className="person" src={person} alt="person"/>
+                </div>
             </div>
         )
     }

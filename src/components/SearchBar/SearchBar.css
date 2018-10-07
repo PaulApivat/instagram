@@ -1,7 +1,8 @@
 .searchbar-container {
-    border: 3px solid pink;
+    border-top: 3px solid gray;
+    border-bottom: 3px solid gray;
     height: 100px;
-    max-width: 950px;
+    max-width: 1000px;
     width: 100%;
     margin: 0 auto;
 
@@ -11,7 +12,19 @@
 }
 
 .instalogo {
-    height: 40px;
+    height: 35px;
+}
+
+.instaletter {
+    height: 35px;
+}
+
+.compass {
+    height: 35px;
+}
+
+.person {
+    height: 35px;
 }
 
 .searchbar {
@@ -21,7 +34,16 @@
 }
 
 .searchbar input {
-    height: 40px;
+    height: 35px;
     width: 100%;
     text-align: center;
+}
+
+.icon-cluster {
+    /* border: 1px solid red; */
+    width: 15%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

@@ -3,6 +3,7 @@ import './App.css';
 import dummyData from './dummy-data';
 import DummyData from './DummyData';
 import SearchBar from './components/SearchBar/SearchBar'
+import PostsPage from './components/PostContainer/PostsPage'
 
 
 class App extends Component {
@@ -36,6 +37,7 @@ class App extends Component {
       <div className="App">
             <SearchBar filterPost={this.filterPost}/>
             <DummyData dummyData={this.state.data} />
+            <PostsPage />
       </div>
     )
   }

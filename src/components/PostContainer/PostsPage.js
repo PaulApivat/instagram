@@ -10,7 +10,7 @@ class PostsPage extends React.Component {
 
     render(){
         return (
-
+            <div> Posts Page </div>
         )
     }
 }

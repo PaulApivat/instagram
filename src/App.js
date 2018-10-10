@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import dummyData from './dummy-data';
-import DummyData from './DummyData';
-import SearchBar from './components/SearchBar/SearchBar'
-import PostsPage from './components/PostContainer/PostsPage'
+// import dummyData from './dummy-data';
+// import DummyData from './DummyData';
+// import SearchBar from './components/SearchBar/SearchBar'
+// import PostsPage from './components/PostContainer/PostsPage'
+import ThePostsPage from './ThePostsPage'
 
 
 class App extends Component {
@@ -14,19 +15,19 @@ class App extends Component {
     };
   }
 
-  componentDidMount(){
-    this.setState({data: dummyData});
-    // This console.log shows an empty array
-    console.log(this.state.data)
-  }
+  // componentDidMount(){
+  //   this.setState({data: dummyData});
+  //   // This console.log shows an empty array
+  //   console.log(this.state.data)
+  // }
 
-  filterPost = (str) => {
-    const posts = dummyData;
-    const filteredpost = posts.filter((post) => {
-      return post.username.includes(str)
-    })
-    this.setState({data: filteredpost});
-  }
+  // filterPost = (str) => {
+  //   const posts = dummyData;
+  //   const filteredpost = posts.filter((post) => {
+  //     return post.username.includes(str)
+  //   })
+  //   this.setState({data: filteredpost});
+  // }
 
 
 
@@ -35,9 +36,9 @@ class App extends Component {
     console.log(this.state.data)
     return(
       <div className="App">
-            <SearchBar filterPost={this.filterPost}/>
-            <DummyData dummyData={this.state.data} />
-            <PostsPage />
+            {/* <SearchBar filterPost={this.filterPost}/>
+            <DummyData dummyData={this.state.data} /> */}
+            <ThePostsPage />
       </div>
     )
   }

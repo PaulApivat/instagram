@@ -13,7 +13,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: []
+      data: [],
     };
   }
 
@@ -21,6 +21,8 @@ class App extends Component {
     //pulling 'loggedIn' data from HOC Authenticate via PassedComponent props
     console.log(this.props)
   }
+
+
 
   render(){
     return(

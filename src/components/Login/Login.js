@@ -7,20 +7,31 @@ class Login extends React.Component {
         this.state = {
             username: '',
             password: '',
-            loggedIn: true,
+            loggedIn: false,
             count: 10
         }
+    }
+
+    componentDidMount(){
+        //pulling 'loggedIn' data from HOC Authenticate via PassedComponent props
+        console.log(this.state)
     }
 
     addsOne = () => {
         this.setState(prevState => {
             return { count: prevState.count + 1 };
         })
+        this.setState({loggedIn: true})
     }
 
     handleChange = (event) => {
         // this.setState({username: event.target.value, password: this.state.password });
-        this.setState({loggedIn: event.target.value});
+        this.setState({username: event.target.value});
+    }
+
+    handleChange2 = (event) => {
+        // this.setState({username: event.target.value, password: this.state.password });
+        this.setState({password: event.target.value});
     }
 
     userLogin = () => {
@@ -36,6 +47,7 @@ class Login extends React.Component {
         this.setState({loggedIn: this.state.loggedIn});
         // this.userLogin({password: this.event.target, username: this.event.target});
         // this.setState({password: this.state.password, username: this.state.username});
+        console.log(this.state)
     }
 
 
@@ -44,7 +56,7 @@ class Login extends React.Component {
         return(
             <form onSubmit={this.handleSubmit}>
                 <input type="text" value={this.state.target} onChange={this.handleChange} placeholder="username" />
-                <input placeholder="password" />
+                <input type="text" value={this.state.target} onChange={this.handleChange2} placeholder="password" />
                 <button onClick={this.addsOne}>Login {this.state.count} </button> 
             </form>
         )

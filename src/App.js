@@ -6,11 +6,12 @@ import './App.css';
 // import PostsPage from './components/PostContainer/PostsPage'
 import ThePostsPage from './ThePostsPage'
 import Authenticate from './components/Authentication/Authenticate'
+import Login from './components/Login/Login'
 
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       data: []
     };
@@ -31,7 +32,6 @@ class App extends Component {
   // }
 
 
-
   render(){
     // This console.log shows the FULL dummyData array
     console.log(this.state.data)
@@ -41,10 +41,15 @@ class App extends Component {
             <DummyData dummyData={this.state.data} /> */}
             <Authenticate />
             <ThePostsPage />
+            <h4>From Authenticate: {this.props.count}</h4>
+            <Login />
+            
       </div>
     )
   }
 
 }
+
+// const HOCApp = Authenticate(App)
 
 export default App;

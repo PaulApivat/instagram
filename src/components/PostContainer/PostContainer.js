@@ -8,11 +8,12 @@ import './conversation.png';
 const likeImg = './like.png';
 const conversation = './conversation.png';
 
+//PostContainer class component holds state - counter, username, text and empty commentsarray
 class PostContainer extends React.Component {
     constructor(){
         super();
         this.state = {
-            counter: 0,
+            counter: 10,
             username: 'static username',
             text: '',
             commentsarray: [],
@@ -21,7 +22,7 @@ class PostContainer extends React.Component {
 
     componentDidMount(){
         this.setState({
-            //passing down props from DummyData.js
+            //passing down props from DummyData.js, containing all data
             commentsarray: this.props.commentsarray,
         })
     }
@@ -36,21 +37,29 @@ class PostContainer extends React.Component {
 
     handleChange = (event) => {
         this.setState({text: event.target.value });
+        // Will render, in real-time, what is TYPED in the input, WITHOUT being submitted, 
+        console.log(event.target.value)
     }
 
     addNewComment = () => {
+        //destructuring?
         const {commentsarray, username, text} = this.state;
         this.setState({commentsarray: [...commentsarray, {username, text }]});
         // this.setState({commentsarray: [...this.state.commentsarray, {username: this.state.username, text: this.state.text }]});
+
+        // Once new comment is added, it shows up in handleSubmit first, then in this function
+        console.log(commentsarray)
     }
 
     handleSubmit = (event) => {
+        // NEW COMMENTS, once submitted show up here in this.state
         event.preventDefault();
         this.addNewComment({username: this.state.username, text: this.state.text});
         this.setState({text: this.state.text, username: this.state.username});
         // this console.log shows PostContainer's current state {counter: 0, username: "static username", text: "a"}
         // and commentsarray being passed as a prop from DummyData -- pre-existing data
-        console.log(this.state)
+        console.log(this.state) 
+        console.log(this.state.text)
         console.log(this.props.commentsarray)
     }
 

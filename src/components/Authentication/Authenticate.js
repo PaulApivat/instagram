@@ -25,6 +25,8 @@ const Authenticate = PassedComponent => {
 
 
         render(){
+            // the {...this.state} ensures that the state, with loggedIn, is passed via props to App.js
+            // without {...this.state} what gets rendered is a login, becaues there is no loggedIn
             return <PassedComponent {...this.state} />;
         }
     }

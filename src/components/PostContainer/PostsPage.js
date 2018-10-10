@@ -29,12 +29,12 @@ class PostsPage extends React.Component {
 
 
     render(){
+        // This console.log shows the FULL dummyData array
+        console.log(this.state.data)
         return (
-        // <div className="App">
         <div>
             <SearchBar filterPost={this.filterPost}/>
             <DummyData dummyData={this.state.data} />
-            The Posts Page
         </div>
         )
     }

@@ -18,30 +18,15 @@ class App extends Component {
   }
 
   componentDidMount(){
+    //pulling 'loggedIn' data from HOC Authenticate via PassedComponent props
     console.log(this.props)
   }
 
-  // filterPost = (str) => {
-  //   const posts = dummyData;
-  //   const filteredpost = posts.filter((post) => {
-  //     return post.username.includes(str)
-  //   })
-  //   this.setState({data: filteredpost});
-  // }
-
-
   render(){
-    // This console.log shows the FULL dummyData array
-    console.log(this.state.data)
     return(
       <div className="App">
-            {/* <SearchBar filterPost={this.filterPost}/>
-            <DummyData dummyData={this.state.data} /> */}
             {this.props.loggedIn ? <PostsPage /> : <Login />}
-            {/* <ThePostsPage /> */}
             <h4>From Authenticate: {this.props.count}</h4>
-         
-            
       </div>
     )
   }

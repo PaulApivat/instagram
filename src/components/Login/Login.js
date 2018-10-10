@@ -4,17 +4,26 @@ class Login extends React.Component {
     constructor(){
         super();
         this.state = {
-
+            username: '',
+            password: '',
         }
     }
 
+    handleSubmit = (event) => {
+        event.preventDefault();
+        this.userLogin({username: this.event.target, password: this.event.target});
+        this.setState({password: this.state.password, username: this.state.username});
+    }
+
+
+
     render(){
         return(
-            <div>
+            <form onSubmit={this.handleSubmit}>
                 <input placeholder="username" />
                 <input placeholder="password" />
                 <button>Login</button>
-            </div>
+            </form>
         )
     }
 }

@@ -6,9 +6,24 @@ const Authenticate = PassedComponent => {
         constructor(props){
             super(props);
             this.state = {
-                count: 5
+                loggedIn: true
             }
         }
+
+        // componentDidMount(){
+        //     // const userLogin = localStorage.getItem(this.state.loggedIn)
+        //     if (loggedIn) {
+        //         return (
+        //             post
+        //         ) 
+        //     } else {
+        //         return ( 
+        //             login
+        //         )
+        //     }
+        // }
+
+
         render(){
             return <PassedComponent {...this.state} />;
         }

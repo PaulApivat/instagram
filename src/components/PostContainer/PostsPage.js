@@ -1,6 +1,6 @@
 import React from 'react';
-// import dummyData from '../..dummy-data';
-// import DummyData from '../..DummyData';
+// import dummyData from '../../dummy-data';
+// import DummyData from '../../DummyData';
 // import SearchBar from './components/SearchBar/SearchBar'
 
 

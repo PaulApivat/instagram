@@ -17,11 +17,9 @@ class App extends Component {
     };
   }
 
-  // componentDidMount(){
-  //   this.setState({data: dummyData});
-  //   // This console.log shows an empty array
-  //   console.log(this.state.data)
-  // }
+  componentDidMount(){
+    console.log(this.props)
+  }
 
   // filterPost = (str) => {
   //   const posts = dummyData;
@@ -39,10 +37,10 @@ class App extends Component {
       <div className="App">
             {/* <SearchBar filterPost={this.filterPost}/>
             <DummyData dummyData={this.state.data} /> */}
-            <Authenticate />
-            <ThePostsPage />
+            {this.props.loggedIn ? <ThePostsPage /> : <Login />}
+            {/* <ThePostsPage /> */}
             <h4>From Authenticate: {this.props.count}</h4>
-            <Login />
+         
             
       </div>
     )
@@ -50,6 +48,7 @@ class App extends Component {
 
 }
 
-// const HOCApp = Authenticate(App)
 
-export default App;
+const AuthenticatedPage = Authenticate(App);
+
+export default AuthenticatedPage;

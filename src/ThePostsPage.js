@@ -5,8 +5,8 @@ import SearchBar from './components/SearchBar/SearchBar'
 
 
 class ThePostsPage extends React.Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             data: [],
         }
@@ -15,7 +15,7 @@ class ThePostsPage extends React.Component {
     componentDidMount(){
         this.setState({data: dummyData});
         // This console.log shows an empty array
-        console.log(this.state.data)
+        console.log(this.props)
     }
     
     filterPost = (str) => {

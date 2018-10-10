@@ -3,8 +3,8 @@ import './App.css';
 // import dummyData from './dummy-data';
 // import DummyData from './DummyData';
 // import SearchBar from './components/SearchBar/SearchBar'
-// import PostsPage from './components/PostContainer/PostsPage'
-import ThePostsPage from './ThePostsPage'
+import PostsPage from './components/PostContainer/PostsPage'
+// import PostsPage from './ThePostsPage'
 import Authenticate from './components/Authentication/Authenticate'
 import Login from './components/Login/Login'
 
@@ -37,7 +37,7 @@ class App extends Component {
       <div className="App">
             {/* <SearchBar filterPost={this.filterPost}/>
             <DummyData dummyData={this.state.data} /> */}
-            {this.props.loggedIn ? <ThePostsPage /> : <Login />}
+            {this.props.loggedIn ? <PostsPage /> : <Login />}
             {/* <ThePostsPage /> */}
             <h4>From Authenticate: {this.props.count}</h4>
          

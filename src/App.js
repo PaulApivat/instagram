@@ -5,6 +5,7 @@ import './App.css';
 // import SearchBar from './components/SearchBar/SearchBar'
 // import PostsPage from './components/PostContainer/PostsPage'
 import ThePostsPage from './ThePostsPage'
+import Authenticate from './components/Authentication/Authenticate'
 
 
 class App extends Component {
@@ -38,6 +39,7 @@ class App extends Component {
       <div className="App">
             {/* <SearchBar filterPost={this.filterPost}/>
             <DummyData dummyData={this.state.data} /> */}
+            <Authenticate />
             <ThePostsPage />
       </div>
     )

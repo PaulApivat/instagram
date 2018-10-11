@@ -12,6 +12,8 @@ class Login extends React.Component {
         }
     }
 
+    //WHY is my code slightly different from the model solution?
+
     handleChange = event => {
         // this.setState({ [event.target.name]: event.target.value });
         this.setState({ username: event.target.value });
@@ -22,46 +24,16 @@ class Login extends React.Component {
         this.setState({ password: event.target.value });
     };
 
+    // 6.) when click 'login' button, set 'username' input to localStorage 'user'
     handleSubmit = event => {
         const user = this.state.username;
+        const password = this.state.password;
+        //part of browser API - not React;
         localStorage.setItem('user', user);
+        localStorage.setItem('password', password);
+        // reloads entire page - goes back to App -> Authenticate -> Login -> (now there IS a user) -> return <App /> instead
         window.location.reload();
     };
-
-
-    // componentDidMount(){
-    //     //checking initial state of Login class component - loggedIn: false
-    //     console.log(this.state)
-    // }
-
-    // userLogin = () => {
-    //     this.setState(prevState => {
-    //         return { count: prevState.count + 1 };
-    //     })
-    //     this.setState({loggedIn: true})
-    // }
-
-    // handleChange = (event) => {
-    //     // this.setState({username: event.target.value, password: this.state.password });
-    //     this.setState({username: event.target.value});
-    // }
-
-    // handleChange2 = (event) => {
-    //     // this.setState({username: event.target.value, password: this.state.password });
-    //     this.setState({password: event.target.value});
-    // }
-
-    // handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     // this.userLogin({loggedIn: this.state.loggedIn});
-    //     // this.setState({loggedIn: this.state.loggedIn});
-    //     // this.userLogin({password: this.event.target, username: this.event.target});
-    //     // this.setState({password: this.state.password, username: this.state.username});
-    //     console.log(this.state)
-       
-    // }
-
-
 
     render(){
         return(

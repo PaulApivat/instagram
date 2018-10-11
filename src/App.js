@@ -9,33 +9,33 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-       data: [], 
+      data: [], 
     };
   }
 
+  // 3.)
   componentDidMount(){
-    //pulling 'loggedIn' data from HOC Authenticate via PassedComponent props
+    //pulling all State object from HOC Authenticate via App props (i.e., username, password, loggedIn, count)
     console.log(this.props)
   }
 
-
-// move the conditional rendering logic below into Authenticate
+  // 2.)
   render(){
+    // checking 'user' (username) entered into localStorage
+    console.log(localStorage.getItem('user'))
+    console.log(localStorage.getItem('password'))
     return(
       <div className="App">
-            
-            {/* {this.props.loggedIn ? <PostsPage /> : <Login />} */}
-            <h4>From Authenticate: {this.props.count}</h4>
             <PostsPage />
       </div>
     )
   }
-
 }
 
 
 // const AuthenticatedPage = Authenticate(App);
 // export default AuthenticatedPage;
+
 
 // exporting a higher order component that we built; passing an App class into Authenticate HOC
 // wrapping functionality of App INSIDE higher order component Authenticate

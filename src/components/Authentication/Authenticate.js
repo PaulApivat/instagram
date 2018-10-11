@@ -1,9 +1,11 @@
 import React from 'react';
 import Login from '../Login/Login'
 
-//This is the higher order component
+//This is the higher order component - the App that gets "passed" has to be the same name as App.js
+// Authenticate is a (higher-order) function, that RETURNS a React.Component class
 const Authenticate = App => {
-    return class HocAuth extends React.Component {
+    // can be anonymous class component (no need for a name)
+    return class extends React.Component {
         constructor(props){
             super(props);
             this.state = {
@@ -14,55 +16,25 @@ const Authenticate = App => {
             }
         }
 
+        // 5.)
         // on componentDidMount, check localStorage to see if a user is logged in
-        // if user is loggedin, we will run the <PassedComponent />, else return <Login />
+        // if user is loggedin, we will run the <App />, else return <Login />
         componentDidMount() {
-            console.log(this.state)
             if (!localStorage.getItem('user')) {
                 this.setState({ loggedIn: false});
             } else {
                 this.setState({ loggedIn: true });
             }
+            console.log(this.state.username)
         }
 
-        
-        // userLogin = () => {
-        //     this.setState(prevState => {
-        //         return { count: prevState.count + 1 };
-        //     })
-        //     this.setState({loggedIn: true})
-        // }
-
-        // handleChange = (event) => {
-        //     // this.setState({username: event.target.value, password: this.state.password });
-        //     this.setState({username: event.target.value});
-        // }
-
-        // handleChange2 = (event) => {
-        //     // this.setState({username: event.target.value, password: this.state.password });
-        //     this.setState({password: event.target.value});
-        // }
-
-        // handleSubmit = (event) => {
-        //     event.preventDefault();
-        //     console.log(this.state)
-        
-        // }
-
-
+        // 4.)
         render(){
-            // the {...this.state} ensures that the state, with loggedIn, is passed via props to App.js
-            // without {...this.state} what gets rendered is a login, becaues there is no loggedIn
-            // return <PassedComponent {...this.state} />
+            // on the first pass, it will return <Login /> because loggedIn default is "false" (until a username is entered)
+            // {...this.state} ensures that State data is passed down to App class from Authenticate (HOC); 
+            // the initial state passed down shows up on componentDidMount
                 if (this.state.loggedIn) return <App {...this.state}/>;
                 return <Login />;
-
-                // <form onSubmit={this.handleSubmit}>
-                //     <PassedComponent {...this.state} />
-                //     <input type="text" value={this.state.target} onChange={this.handleChange} placeholder="username" />
-                //     <input type="text" value={this.state.target} onChange={this.handleChange2} placeholder="password" />
-                //     <button onClick={this.userLogin}>Login {this.state.count} </button> 
-                // </form>
         }
     }
 }

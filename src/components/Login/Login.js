@@ -2,8 +2,8 @@ import React from 'react'
 
 // I want users to login first, so no need to receive props from another component, initially.
 class Login extends React.Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             username: '',
             password: '',
@@ -12,47 +12,69 @@ class Login extends React.Component {
         }
     }
 
-    componentDidMount(){
-        //checking initial state of Login class component - loggedIn: false
-        console.log(this.state)
-    }
+    handleChange = event => {
+        // this.setState({ [event.target.name]: event.target.value });
+        this.setState({ username: event.target.value });
+    };
 
-    userLogin = () => {
-        this.setState(prevState => {
-            return { count: prevState.count + 1 };
-        })
-        this.setState({loggedIn: true})
-    }
+    handleChange2 = event => {
+        // this.setState({ [event.target.name]: event.target.value });
+        this.setState({ password: event.target.value });
+    };
 
-    handleChange = (event) => {
-        // this.setState({username: event.target.value, password: this.state.password });
-        this.setState({username: event.target.value});
-    }
+    handleSubmit = event => {
+        const user = this.state.username;
+        localStorage.setItem('user', user);
+        window.location.reload();
+    };
 
-    handleChange2 = (event) => {
-        // this.setState({username: event.target.value, password: this.state.password });
-        this.setState({password: event.target.value});
-    }
 
-    handleSubmit = (event) => {
-        event.preventDefault();
-        // this.userLogin({loggedIn: this.state.loggedIn});
-        // this.setState({loggedIn: this.state.loggedIn});
-        // this.userLogin({password: this.event.target, username: this.event.target});
-        // this.setState({password: this.state.password, username: this.state.username});
-        console.log(this.state)
+    // componentDidMount(){
+    //     //checking initial state of Login class component - loggedIn: false
+    //     console.log(this.state)
+    // }
+
+    // userLogin = () => {
+    //     this.setState(prevState => {
+    //         return { count: prevState.count + 1 };
+    //     })
+    //     this.setState({loggedIn: true})
+    // }
+
+    // handleChange = (event) => {
+    //     // this.setState({username: event.target.value, password: this.state.password });
+    //     this.setState({username: event.target.value});
+    // }
+
+    // handleChange2 = (event) => {
+    //     // this.setState({username: event.target.value, password: this.state.password });
+    //     this.setState({password: event.target.value});
+    // }
+
+    // handleSubmit = (event) => {
+    //     event.preventDefault();
+    //     // this.userLogin({loggedIn: this.state.loggedIn});
+    //     // this.setState({loggedIn: this.state.loggedIn});
+    //     // this.userLogin({password: this.event.target, username: this.event.target});
+    //     // this.setState({password: this.state.password, username: this.state.username});
+    //     console.log(this.state)
        
-    }
+    // }
 
 
 
     render(){
         return(
             <form onSubmit={this.handleSubmit}>
+                <input type="text" value={this.state.value} onChange={this.handleChange} placeholder="username" />
+                <input type="text" value={this.state.value} onChange={this.handleChange2} placeholder="password" />
+                <button onClick={this.handleSubmit}>Login {this.state.count} </button> 
+            </form>
+            /* <form onSubmit={this.handleSubmit}>
                 <input type="text" value={this.state.target} onChange={this.handleChange} placeholder="username" />
                 <input type="text" value={this.state.target} onChange={this.handleChange2} placeholder="password" />
                 <button onClick={this.userLogin}>Login {this.state.count} </button> 
-            </form>
+            </form> */
         )
     }
 }

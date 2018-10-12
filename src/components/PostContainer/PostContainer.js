@@ -24,6 +24,12 @@ const IconDiv = styled.div`
     justify-content: space-between;
 `
 
+const TimeStampDiv = styled.div`
+    font-size: 12px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+`
+
 
 //PostContainer class component holds state - counter, username, text and empty commentsarray
 class PostContainer extends React.Component {
@@ -110,9 +116,10 @@ class PostContainer extends React.Component {
                         </div>
                     ))}
                 </div>
-                <div className="timestamp">
+
+                <TimeStampDiv>
                     {moment(Date.now(this.props.timestamp)).startOf('day').fromNow()}
-                </div>
+                </TimeStampDiv>
 
                 <form onSubmit={this.handleSubmit}>
                      <input className="inputbox" type="text" value={this.state.text} onChange={this.handleChange} placeholder="Add a comment..." />

@@ -6,6 +6,7 @@ import './like.png';
 import './compass.png';
 import './person.png';
 import styled from 'styled-components';
+import { Button } from 'reactstrap';
 
 
 
@@ -38,7 +39,7 @@ const LogoImage = styled.img`
 `;
 
 const IconCluster = styled.div`
-    width: 15%;
+    width: 25%;
     height: 40px;
     display: flex;
     flex-direction: row;
@@ -57,12 +58,18 @@ const InputStyle = styled.input`
 `
 
 
+
 class SearchBar extends React.Component {
     constructor(){
         super();
         this.state = {
             searchterm: '',
         }
+    }
+
+    handleLogOut = (event) => {
+        localStorage.setItem('user', '');
+        window.location.reload();
     }
 
 
@@ -86,6 +93,7 @@ class SearchBar extends React.Component {
                     <LogoImage className="compass" src={compass} alt="compass"/> 
                     <LogoImage src={likeImg} alt="heart"/> 
                     <LogoImage className="person" src={person} alt="person"/>
+                    <Button onClick={this.handleLogOut}>Logout</Button>
                 </IconCluster>
             </HeaderWrapper>
         )

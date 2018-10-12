@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from 'reactstrap';
 
 // I want users to login first, so no need to receive props from another component, initially.
 class Login extends React.Component {
@@ -19,11 +20,6 @@ class Login extends React.Component {
         this.setState({ [event.target.name]: event.target.value });
     };
 
-    // handleChange2 = event => {
-    //     // this.setState({ [event.target.name]: event.target.value });
-    //     this.setState({ [event.target.name]: event.target.value });
-    // };
-
     // 6.) when click 'login' button, set 'username' input to localStorage 'user'
     handleSubmit = event => {
         const user = this.state.username;
@@ -40,7 +36,7 @@ class Login extends React.Component {
             <form onSubmit={this.handleSubmit}>
                 <input type="text" value={this.state.username} name='username' onChange={this.handleChange} placeholder="username" />
                 <input type="text" value={this.state.password} name='password' onChange={this.handleChange} placeholder="password" />
-                <button onClick={this.handleSubmit}>Login {this.state.count} </button> 
+                <Button onClick={this.handleSubmit}>Login {this.state.count} </Button> 
             </form>
             /* <form onSubmit={this.handleSubmit}>
                 <input type="text" value={this.state.target} onChange={this.handleChange} placeholder="username" />

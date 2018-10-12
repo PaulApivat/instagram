@@ -50,7 +50,6 @@ class DummyData extends React.Component {
                                     commentsarray={alldata.comments} 
                                     likes={alldata.likes} 
                                     timestamp={alldata.timestamp}
-
                                 />
                             
 

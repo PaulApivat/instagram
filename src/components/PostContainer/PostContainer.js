@@ -5,6 +5,7 @@ import './PostContainer.css';
 import './like.png';
 import './conversation.png';
 import styled from 'styled-components';
+// import moment from 'moment/src/moment';
 
 const likeImg = './like.png';
 const conversation = './conversation.png';
@@ -32,16 +33,21 @@ class PostContainer extends React.Component {
             username: 'static username',
             text: '',
             commentsarray: [],
+            likes: 0,
         }
     }
 
     componentDidMount(){
         this.setState({
             //passing down props from DummyData.js, containing all data
+            // re-route number of likes, passed down, set to counter
             commentsarray: this.props.commentsarray,
+            counter: this.props.likes,
         })
+        console.log(this.props.likes)
     }
 
+    // re-routed counter starts counting from previous number of likes
     handleIncrease = () => {
         this.setState(previousState => {
             return {
@@ -49,6 +55,8 @@ class PostContainer extends React.Component {
             }
         })
     }
+
+
 
     handleChange = (event) => {
         this.setState({text: event.target.value });
@@ -77,6 +85,10 @@ class PostContainer extends React.Component {
         console.log(this.state) 
         console.log(this.state.text)
         console.log(this.props.commentsarray)
+    }
+
+    momentTime = (str) => {
+        console.log(this.props.timestamp)
     }
 
 

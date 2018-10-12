@@ -8,6 +8,11 @@ const CardTextDiv = styled.div`
     display: flex;
 `
 
+const CommentText = styled.div`
+    width: 75%;
+    padding-left: 5px;
+`
+
 class CommentSection extends React.Component {
     constructor(props){
         super(props);
@@ -19,7 +24,7 @@ class CommentSection extends React.Component {
             <CardBody>
                 <CardTextDiv>
                         <UsernameStyle>{this.props.username}</UsernameStyle> 
-                        <div>{this.props.text} </div>
+                        <CommentText>{this.props.text} </CommentText>
                 </CardTextDiv>
             </CardBody>
         )

@@ -1,7 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
+import UsernameStyle from '../../Styles/Resusables/UsernameStyle';
+import styled from 'styled-components';
 
+const CardTextDiv = styled.div`
+    border: 1px solid blue;
+    display: flex;
+`
 
 class CommentSection extends React.Component {
     constructor(props){
@@ -12,7 +18,10 @@ class CommentSection extends React.Component {
     render(){
         return(
             <CardBody>
-                <CardText><strong>{this.props.username}</strong> {this.props.text} </CardText>
+                <CardTextDiv>
+                        <UsernameStyle>{this.props.username}</UsernameStyle> 
+                        <div>{this.props.text} </div>
+                </CardTextDiv>
             </CardBody>
         )
     }

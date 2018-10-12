@@ -8,7 +8,7 @@
 
 
 .header-container {
-    /* border: 5px solid orange; */
+    border: 5px solid orange;
     height: 80px;
     width: 100%;
     display: flex;
@@ -23,15 +23,14 @@
     padding-top: 20px;
     width: 150px;
 }
-
+/* 
 .thumbnail-image {
     height: 60px;
     width: 40%;
-    /* border: 1px solid purple; */
     border-radius: 50%;
     margin-left: 20px;
     margin-top: 10px;
-}
+} */
 
 
 .image {

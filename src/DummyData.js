@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
 import './DummyData.css';
 import styled from 'styled-components';
+import UsernameStyle from './Styles/Resusables/UsernameStyle';
 
 const ThumbnailImage = styled.img`
     height: 60px;
@@ -38,9 +39,9 @@ class DummyData extends React.Component {
                                         <div className="thumbnail-image-container">
                                             <ThumbnailImage src={alldata.thumbnailUrl} alt="Thumbnail Image" />
                                         </div>
-                                        <div className="username">
+                                        <UsernameStyle>
                                             {alldata.username}
-                                        </div>
+                                        </UsernameStyle>
                                     </div>
                                 <CardImg className="image" top width="100%" 
                                     src={alldata.imageUrl} alt="Main Image" 

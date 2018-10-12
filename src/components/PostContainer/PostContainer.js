@@ -82,7 +82,6 @@ class PostContainer extends React.Component {
                 <div className="heart-icon" onClick={this.handleIncrease}>
                     <img src={likeImg} alt="like image"/>
                     <img className="conversation" src={conversation} alt="conversation"/>
-                    <DivStyle>Div</DivStyle>
                 </div>
 
                 <div className="likes">

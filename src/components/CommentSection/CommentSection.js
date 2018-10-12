@@ -5,7 +5,6 @@ import UsernameStyle from '../../Styles/Resusables/UsernameStyle';
 import styled from 'styled-components';
 
 const CardTextDiv = styled.div`
-    border: 1px solid blue;
     display: flex;
 `
 

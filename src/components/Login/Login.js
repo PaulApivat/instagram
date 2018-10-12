@@ -16,13 +16,13 @@ class Login extends React.Component {
 
     handleChange = event => {
         // this.setState({ [event.target.name]: event.target.value });
-        this.setState({ username: event.target.value });
+        this.setState({ [event.target.name]: event.target.value });
     };
 
-    handleChange2 = event => {
-        // this.setState({ [event.target.name]: event.target.value });
-        this.setState({ password: event.target.value });
-    };
+    // handleChange2 = event => {
+    //     // this.setState({ [event.target.name]: event.target.value });
+    //     this.setState({ [event.target.name]: event.target.value });
+    // };
 
     // 6.) when click 'login' button, set 'username' input to localStorage 'user'
     handleSubmit = event => {
@@ -38,8 +38,8 @@ class Login extends React.Component {
     render(){
         return(
             <form onSubmit={this.handleSubmit}>
-                <input type="text" value={this.state.value} onChange={this.handleChange} placeholder="username" />
-                <input type="text" value={this.state.value} onChange={this.handleChange2} placeholder="password" />
+                <input type="text" value={this.state.username} name='username' onChange={this.handleChange} placeholder="username" />
+                <input type="text" value={this.state.password} name='password' onChange={this.handleChange} placeholder="password" />
                 <button onClick={this.handleSubmit}>Login {this.state.count} </button> 
             </form>
             /* <form onSubmit={this.handleSubmit}>

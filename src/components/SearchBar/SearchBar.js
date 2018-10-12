@@ -5,7 +5,7 @@ import './Instagram-Letter.png'
 import './like.png';
 import './compass.png';
 import './person.png';
-// import styled from 'styled-components';
+import styled from 'styled-components';
 
 
 
@@ -14,6 +14,12 @@ const instaLetter = './Instagram-Letter.png';
 const likeImg = './like.png';
 const compass = './compass.png';
 const person = './person.png';
+
+const SampleDiv = styled.div`
+    border: 1px solid red;
+    background-color: green;
+    color: white;
+`;
 
 // const HeaderWrapper = styled.div`
 //     border-top: 3px solid gray;
@@ -26,7 +32,7 @@ const person = './person.png';
 //     display: flex;
 //     justify-content: space-between;
 //     padding-top: 20px;
-// `
+// `;
 
 
 class SearchBar extends React.Component {
@@ -59,6 +65,9 @@ class SearchBar extends React.Component {
                     <img className="" src={likeImg} alt="heart"/> 
                     <img className="person" src={person} alt="person"/>
                 </div>
+                <SampleDiv>
+                    <div> New Div </div>
+                </SampleDiv>
             </div>
         )
     }

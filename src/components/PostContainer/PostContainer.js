@@ -5,7 +5,8 @@ import './PostContainer.css';
 import './like.png';
 import './conversation.png';
 import styled from 'styled-components';
-// import moment from 'moment/src/moment';
+import moment from 'moment';
+
 
 const likeImg = './like.png';
 const conversation = './conversation.png';
@@ -34,6 +35,7 @@ class PostContainer extends React.Component {
             text: '',
             commentsarray: [],
             likes: 0,
+            timestamp: '',
         }
     }
 
@@ -43,8 +45,9 @@ class PostContainer extends React.Component {
             // re-route number of likes, passed down, set to counter
             commentsarray: this.props.commentsarray,
             counter: this.props.likes,
+            timestamp: this.props.timestamp,
         })
-        console.log(this.props.likes)
+        console.log(moment(Date.now(this.props.timestamp)).fromNow())
     }
 
     // re-routed counter starts counting from previous number of likes
@@ -87,10 +90,6 @@ class PostContainer extends React.Component {
         console.log(this.props.commentsarray)
     }
 
-    momentTime = (str) => {
-        console.log(this.props.timestamp)
-    }
-
 
     render(){
         return (
@@ -112,7 +111,7 @@ class PostContainer extends React.Component {
                     ))}
                 </div>
                 <div className="timestamp">
-                    Time: {this.props.timestamp}
+                    {moment(Date.now(this.props.timestamp)).startOf('day').fromNow()}
                 </div>
 
                 <form onSubmit={this.handleSubmit}>

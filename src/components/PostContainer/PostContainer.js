@@ -4,9 +4,20 @@ import PropTypes from 'prop-types';
 import './PostContainer.css';
 import './like.png';
 import './conversation.png';
+import styled from 'styled-components';
 
 const likeImg = './like.png';
 const conversation = './conversation.png';
+
+const DivStyle = styled.div`
+    border: 1px solid red;
+`;
+
+// const LogoImage = styled.img`
+//     height: 35px;
+// `;
+
+
 
 //PostContainer class component holds state - counter, username, text and empty commentsarray
 class PostContainer extends React.Component {
@@ -71,6 +82,7 @@ class PostContainer extends React.Component {
                 <div className="heart-icon" onClick={this.handleIncrease}>
                     <img src={likeImg} alt="like image"/>
                     <img className="conversation" src={conversation} alt="conversation"/>
+                    <DivStyle>Div</DivStyle>
                 </div>
 
                 <div className="likes">

@@ -3,7 +3,15 @@ import PostContainer from './components/PostContainer/PostContainer'
 import PropTypes from 'prop-types';
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
 import './DummyData.css';
+import styled from 'styled-components';
 
+const ThumbnailImage = styled.img`
+    height: 60px;
+    width: 40%;
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-top: 10px;
+`
 
 
 class DummyData extends React.Component {
@@ -28,7 +36,7 @@ class DummyData extends React.Component {
                             <Card className="main-container">
                                     <div className="header-container">
                                         <div className="thumbnail-image-container">
-                                            <img className="thumbnail-image" src={alldata.thumbnailUrl} alt="Thumbnail Image" />
+                                            <ThumbnailImage src={alldata.thumbnailUrl} alt="Thumbnail Image" />
                                         </div>
                                         <div className="username">
                                             {alldata.username}

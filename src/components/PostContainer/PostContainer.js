@@ -9,14 +9,18 @@ import styled from 'styled-components';
 const likeImg = './like.png';
 const conversation = './conversation.png';
 
-const DivStyle = styled.div`
-    border: 1px solid red;
+
+const LogoImage = styled.img`
+    height: 25px;
 `;
 
-// const LogoImage = styled.img`
-//     height: 35px;
-// `;
-
+const IconDiv = styled.div`
+    margin-top: 30px;
+    width: 10%;
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-between;
+`
 
 
 //PostContainer class component holds state - counter, username, text and empty commentsarray
@@ -67,6 +71,7 @@ class PostContainer extends React.Component {
         event.preventDefault();
         this.addNewComment({username: this.state.username, text: this.state.text});
         this.setState({text: this.state.text, username: this.state.username});
+        this.setState({text: ' '});
         // this console.log shows PostContainer's current state {counter: 0, username: "static username", text: "a"}
         // and commentsarray being passed as a prop from DummyData -- pre-existing data
         console.log(this.state) 
@@ -79,10 +84,10 @@ class PostContainer extends React.Component {
         return (
             <div>
 
-                <div className="heart-icon" onClick={this.handleIncrease}>
-                    <img src={likeImg} alt="like image"/>
-                    <img className="conversation" src={conversation} alt="conversation"/>
-                </div>
+                <IconDiv>
+                    <LogoImage onClick={this.handleIncrease} src={likeImg} alt="like image"/>
+                    <LogoImage src={conversation} alt="conversation"/>
+                </IconDiv>
 
                 <div className="likes">
                     Likes: {this.state.counter}

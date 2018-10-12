@@ -31,13 +31,30 @@ const HeaderWrapper = styled.div`
 
 const LogoHeader = styled.div`
     height: 35px;
-    border: 1px solid red;
 `;
 
 const LogoImage = styled.img`
     height: 35px;
 `;
 
+const IconCluster = styled.div`
+    width: 15%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+`
+
+const SearchBarStyle = styled.div`
+    height: 40px;
+    width: 25%;
+`
+
+const InputStyle = styled.input`
+    height: 35px;
+    width: 100%;
+    text-align: center;
+`
 
 
 class SearchBar extends React.Component {
@@ -62,14 +79,14 @@ class SearchBar extends React.Component {
                 <LogoHeader>
                     <LogoImage src={instaLogo} alt="insta logo"/> | <LogoImage src={instaLetter} alt="Instagram" />
                 </LogoHeader>
-                <div className="searchbar">
-                    <input value={this.state.searchterm} onChange={this.handleChange} placeholder="Search" />
-                </div>
-                <div className="icon-cluster">
-                    <img className="compass" src={compass} alt="compass"/> 
-                    <img className="" src={likeImg} alt="heart"/> 
-                    <img className="person" src={person} alt="person"/>
-                </div>
+                <SearchBarStyle>
+                    <InputStyle value={this.state.searchterm} onChange={this.handleChange} placeholder="Search" />
+                </SearchBarStyle>
+                <IconCluster>
+                    <LogoImage className="compass" src={compass} alt="compass"/> 
+                    <LogoImage src={likeImg} alt="heart"/> 
+                    <LogoImage className="person" src={person} alt="person"/>
+                </IconCluster>
             </HeaderWrapper>
         )
     }

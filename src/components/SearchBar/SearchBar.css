@@ -19,17 +19,16 @@
     height: 35px;
 } */
 
-.compass {
+/* .compass {
     height: 35px;
 }
 
 .person {
     height: 35px;
-}
-
+} */
+/* 
 .searchbar {
     height: 40px;
-    /* border: 1px solid gray; */
     width: 25%;
 }
 
@@ -37,13 +36,13 @@
     height: 35px;
     width: 100%;
     text-align: center;
-}
+} */
 
+/* 
 .icon-cluster {
-    /* border: 1px solid red; */
     width: 15%;
     height: 40px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
+} */

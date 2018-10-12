@@ -2,6 +2,7 @@ import React from 'react';
 import dummyData from '../../dummy-data';
 import DummyData from '../../DummyData';
 import SearchBar from '../SearchBar/SearchBar'
+import PropTypes from 'prop-types';
 
 
 class PostsPage extends React.Component {
@@ -18,6 +19,14 @@ class PostsPage extends React.Component {
         console.log(this.state.data)
     }
     
+    // filterPost = (str) => {
+    //     const posts = dummyData;
+    //     const filteredpost = posts.filter((post) => {
+    //         return post.username.includes(str)
+    //     })
+    //     this.setState({data: filteredpost});
+    // }
+
     filterPost = (str) => {
         const posts = dummyData;
         const filteredpost = posts.filter((post) => {
@@ -33,11 +42,26 @@ class PostsPage extends React.Component {
         console.log(this.state.data)
         return (
         <div>
-            <SearchBar filterPost={this.filterPost}/>
+            <SearchBar filterPost={this.filterPost} />
             <DummyData dummyData={this.state.data} />
         </div>
         )
     }
 }
+
+PostsPage.defaultProps = {
+    data: []
+}
+
+PostsPage.propTypes = {
+    data: PropTypes.arrayOf(
+        PropTypes.shape({
+            username: PropTypes.string,
+            likes: PropTypes.number,
+            timestamp: PropTypes.string,
+            comments: PropTypes.array
+        })
+    ).isRequired
+};
 
 export default PostsPage

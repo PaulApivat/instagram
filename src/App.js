@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import PostsPage from './components/PostContainer/PostsPage'
 import Authenticate from './components/Authentication/Authenticate'
-// import Login from './components/Login/Login'
+import PropTypes from 'prop-types';
 
 
 class App extends Component {
@@ -31,6 +31,23 @@ class App extends Component {
     )
   }
 }
+
+
+App.defaultProps = {
+  data: []
+}
+
+App.propTypes = {
+  data: PropTypes.arrayOf(
+      PropTypes.shape({
+          username: PropTypes.string,
+          likes: PropTypes.number,
+          timestamp: PropTypes.string,
+          comments: PropTypes.array
+      })
+  ).isRequired
+};
+
 
 
 // const AuthenticatedPage = Authenticate(App);

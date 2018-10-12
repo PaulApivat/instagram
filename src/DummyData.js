@@ -6,6 +6,7 @@ import './DummyData.css';
 import styled from 'styled-components';
 import UsernameStyle from './Styles/Resusables/UsernameStyle';
 
+
 const ThumbnailImage = styled.img`
     height: 60px;
     width: 40%;
@@ -16,12 +17,12 @@ const ThumbnailImage = styled.img`
 
 
 class DummyData extends React.Component {
-    constructor(){
-        super();
-        // this.state = {
-        //     postarray: [],
-        // };
-    }
+    // constructor(){
+    //     super();
+    //     // this.state = {
+    //     //     postarray: [],
+    //     // };
+    // }
 
     
     
@@ -51,7 +52,6 @@ class DummyData extends React.Component {
                                     likes={alldata.likes} 
                                     timestamp={alldata.timestamp}
                                 />
-                            
 
                             </Card>
                         </div>
@@ -80,3 +80,5 @@ DummyData.propTypes = {
 };
 
 export default DummyData;
+
+// PropTypes

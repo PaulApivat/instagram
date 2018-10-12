@@ -12,7 +12,6 @@ const Authenticate = App => {
                 username: '',
                 password: '',
                 loggedIn: false,
-                count: 15
             }
         }
 
@@ -40,4 +39,12 @@ const Authenticate = App => {
 }
 
 export default Authenticate
+
+// Higher Order components are components that pass other components (to wrap functionality around them)
+// Authenticate pass App and 'wraps' around it an Authenticate component functionality;
+// functionality of Authenticate is: check if 'user' is on localStorage; conditional render, App or Login
+// Authenticate HOC has other use cases: 
+// -can only comment if logged in
+// -can like if logged in
+// -premium account, must log in 
     

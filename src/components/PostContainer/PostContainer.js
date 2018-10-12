@@ -45,6 +45,7 @@ class PostContainer extends React.Component {
         }
     }
 
+    //Component did mount creates a function to UPDATE the State
     componentDidMount(){
         this.setState({
             //passing down props from DummyData.js, containing all data
@@ -53,6 +54,7 @@ class PostContainer extends React.Component {
             counter: this.props.likes,
             timestamp: this.props.timestamp,
         })
+        console.log(this.props.timestamp)
         console.log(moment(Date.now(this.props.timestamp)).fromNow())
     }
 
@@ -111,14 +113,14 @@ class PostContainer extends React.Component {
                 </div>
                 <div>
                     {this.state.commentsarray.map(comments => (
-                        <div>
+                        <div key={this.props.id}>
                             <CommentSection username={comments.username} text={comments.text}/> 
                         </div>
                     ))}
                 </div>
 
                 <TimeStampDiv>
-                    {moment(Date.now(this.props.timestamp)).startOf('day').fromNow()}
+                    {moment(Date.now(this.props.timestamp)).startOf('hour').fromNow()}
                 </TimeStampDiv>
 
                 <form onSubmit={this.handleSubmit}>

@@ -7,6 +7,7 @@ import './compass.png';
 import './person.png';
 import styled from 'styled-components';
 import { Button } from 'reactstrap';
+import PropTypes from 'prop-types';
 
 
 
@@ -99,6 +100,10 @@ class SearchBar extends React.Component {
         )
     }
 }
+
+// SearchBar.propTypes = {
+//     searchterm: PropTypes.string.isRequired,
+// }
 
 export default SearchBar
 
